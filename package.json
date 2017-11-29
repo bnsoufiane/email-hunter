@@ -1,0 +1,36 @@
+{
+  "name": "email-hunter-server",
+  "version": "1.0.0",
+  "description": "Email Hunter API",
+  "main": "index.js",
+  "author": "Soufiane Ben Lamalem",
+  "license": "ISC",
+  "scripts": {
+    "build": "rm -rf dist/* && ./node_modules/.bin/coffee  -o dist/ -c ./",
+    "cp": "cp dist/utils/app.js public/js/",
+    "start": "NODE_ENV=development npm run build && npm run cp && node dist/server.js",
+    "dev": "NODE_ENV=development node --inspect server.js"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.2",
+    "coffeescript": "^2.0.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.4",
+    "express-session": "^1.15.5",
+    "helmet": "^2.0.0",
+    "method-override": "^2.3.5",
+    "mongodb": "^2.1.18",
+    "mongoose": "^4.11.7",
+    "morgan": "^1.8.2",
+    "node-sass-middleware": "^0.11.0",
+    "passport": "0.4.0",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.0-rc.3",
+    "request-promise": "^4.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.0"
+  }
+}
